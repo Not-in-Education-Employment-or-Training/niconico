@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "niconico_mark",
+  "version": "0.0.0.1",
+  "description": "niconico動画の動画の評価を保存する",
+  "browser_action": {
+    "default_title": "niconico_mark",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.nicovideo.jp/search/*", "*://www.nicovideo.jp/tag/*"],
+      "js": ["jquery-3.4.0.min.js", "search.js"]
+    },
+    {
+      "matches": ["*://www.nicovideo.jp/watch/*"],
+      "js": ["jquery-3.4.0.min.js", "watch.js"]
+    }
+  ],
+  "background": {
+    "scripts" : ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "http://127.0.0.1:3000/",
+    "<all_urls>",
+		"tabs",
+		"background",
+    "contextMenus",
+    "history"
+  ],
+  "content_security_policy":"script-src 'self' https://embed.nicovideo.jp; object-src 'self'"
+}

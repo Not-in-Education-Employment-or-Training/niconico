@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>最低限HTML</title>
+    <script src="jquery-3.4.0.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <form>
+      <p><label>キーワード：<input id="q" type="text" name="q" size="40" maxlength="20"></label><label>キーワード検索<input type="radio" name="targets" value="title,description,tags"></label><label>タグ検索<input type="radio" name="targets" value="tagsExact" checked="checked"></label></p>
+      <input type="hidden" name="fields" value="contentId,title,viewCounter,startTime">
+      <p><label>再生数<input id="LowPlayCount" type="number" name="filters[viewCounter][gte]"></label>~<input id="HighPlayCount" type="number" name="filters[viewCounter][lte]"></p>
+      <p><label>投稿日時<input type="datetime-local" name="filters[startTime][gte]"></label>~<input type="datetime-local" name="filters[startTime][lte]">(時間も必ず入れる)</p>
+      <p><label>ソート<select name="_sort">
+        <option value="+viewCounter">再生数が少ない順</option>
+        <option value="-viewCounter">再生数が多い順</option>
+        <option value="+startTime">投稿時間が古い順</option>
+        <option value="-startTime">投稿時間が新しい順</option>
+      </select></label></p>
+      <input type="hidden" name="_limit" value="100">
+      <input type="hidden" name="_context" value="apiguide">
+      <p><input type="button" id="submitButton" value="検索"></p>
+    </form>
+    <p>現在再生中の曲:<a id="playingSong"></a></p>
+    <p>シークバー<input id="seekBar" type="range"><span id="currentTime">0</span>/<span id="maxTime">0</span></p>
+    <p>音量<input id="volumeBar" type="range" max="0.5" step="0.01"></p>
+    <input id="playButton" type="button" value="再生">
+    <input id="pauseButton" type="button" value="停止">
+  </body>
+</html>

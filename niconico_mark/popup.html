@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>最低限HTML</title>
+        <link rel="stylesheet" type="text/css" href="popup.css">
+        <script src="jquery-3.4.0.min.js"></script>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+        <div id="update_page" class="tab_content">
+            <form id="form">
+                <input id="tagText" type="text" size="100" placeholder="ブックマークレットで取得した文字列を入力">
+                    <div>
+                        <select id="hyouka">
+                            <option value="mishityo" selected>未視聴</option>
+                            <option value="ari">可能性あり</option>
+                            <option value="imaichi">イマイチ</option>
+                            <option value="good">良い</option>
+                            <option value="deletezumi">削除済み</option>
+                            <option value="sonota">その他</option>
+                        </select>
+                    </div>
+                <textarea id="comment" cols="100" rows="4"></textarea>
+                <input id="submitButton" type="button" value="保存">
+            </form>
+        </div>
+        <ul>
+            <p>あり:オレンジ</p>
+            <p>イマイチ:青</p>
+            <p>良い:黄緑</p>
+            <p>消去済み:灰色</p>
+            <p>その他:ピンク</p>
+            <p>デフォルト:白</p>
+        </ul>
+        <p id="resultText"></p>
+    </body>
+</html>

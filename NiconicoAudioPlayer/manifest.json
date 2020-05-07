@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "NiconicoAudioPlayer",
+  "version": "0",
+  "browser_action": {
+    "default_title": "NiconicoAudioPlayer",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [
+    "*://*/*",
+		"tabs",
+    "background"
+  ]
+}

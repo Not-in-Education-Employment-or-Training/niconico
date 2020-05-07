@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>最低限HTML</title>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <form action="cgi-bin/abc.cgi" method="post">
+      <p><label>キーワード：<input type="text" name="keyword" size="40" maxlength="20"></label><label>キーワード検索<input type="radio" name="targets" value="title,description,tags" checked="checked"></label><label>タグ検索<input type="radio" name="targets" value="tagsExact"></label></p>
+      <p><label>再生数<input type="number" name="filters[viewCounter][gte]"></label>~<input type="number" name="filters[viewCounter][lte]"></p>
+      <p><label>投稿日時<input type="datetime-local" name="filters[startTime][gte]"></label>~<input type="datetime-local" name="filters[startTime][lte]">(時間も必ず入れる)</p>
+      <p><label>ソート<select name="_sort">
+        <option value="+viewCounter">再生数が少ない順</option>
+        <option value="-viewCounter">再生数が多い順</option>
+        <option value="+startTime">投稿時間が古い順</option>
+        <option value="-startTime">投稿時間が新しい順</option>
+      </select></label></p>
+      <input type="hidden" name="_limit" value="100">
+      <input type="hidden" name="_context" value="apiguide">
+      <p><input type="button" id="submit" value="検索"></p>
+  </form>
+  </body>
+</html>
